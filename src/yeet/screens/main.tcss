@@ -1,0 +1,253 @@
+#main-panel {
+    width: 1fr;
+    height: 1fr;
+}
+
+#inline-diff {
+    display: block;
+    height: 1fr;
+    min-height: 0;
+    padding: 1;
+    background: $surface 80%;
+
+    &.-show {
+        display: block;
+    }
+
+    #inline-diff-title {
+        height: auto;
+        color: $text-primary;
+        dock: top;
+        background: $surface 95%;
+        border-bottom: solid $primary 20%;
+        text-style: bold;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+
+        &.-hidden {
+            display: none;
+        }
+    }
+
+    #inline-view-body {
+        height: 1fr;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+
+    #inline-view-body.-diff-mode {
+        overflow-x: hidden;
+
+        DiffView > .title {
+            display: none;
+        }
+    }
+
+    .inline-content {
+        height: auto;
+        padding: 0 1 1 0;
+    }
+}
+
+MainScreen {
+    background: $background;
+    layers: sidebar screen base;
+    overflow: hidden hidden;
+
+    & > Center {
+        width: 1fr;
+        height: 1fr;
+        overflow: hidden hidden;
+    }
+
+    SideBar {
+        border-right: tall black 10%;
+        background: transparent;
+        dock: left;
+        overflow: hidden hidden;
+        padding: 0;
+        width: 40;
+        max-width: 45%;
+        min-width: 24;
+        height: 1fr;
+
+        #sidebar-tabs {
+            dock: top;
+            width: 1fr;
+            height: auto;
+            padding: 0 1;
+            border-bottom: tall black 10%;
+            background: $surface 30%;
+        }
+
+        .sidebar-tab {
+            width: auto;
+            min-width: 8;
+            margin: 0 1 0 0;
+            border: none;
+            background: transparent;
+            color: $text-secondary;
+            text-style: dim;
+
+            &.-selected,
+            &:focus {
+                color: $text-primary;
+                text-style: bold;
+                border-bottom: heavy $primary;
+                background: $primary 10%;
+            }
+        }
+
+        #sidebar-switcher {
+            height: 1fr;
+        }
+
+        #sidebar-switcher > .-fixed {
+            height: auto;
+            padding: 1 0 0 0;
+        }
+
+        #sidebar-switcher > .-flex {
+            height: 1fr;
+            padding: 1 0 0 0;
+        }
+
+        DirectoryTree {
+            height: 1fr;
+            background: transparent;
+
+            &:focus {
+                background-tint: transparent;
+            }
+        }
+    }
+
+    #git-changes-panel {
+        padding: 0;
+        width: 1fr;
+        height: 1fr;
+
+        #commit-controls {
+            width: 1fr;
+            height: auto;
+            padding: 0 1 1 1;
+            border-bottom: tall black 12%;
+        }
+
+        #commit-message-row {
+            width: 1fr;
+            height: auto;
+            margin: 0 0 1 0;
+        }
+
+        #commit-actions-row {
+            width: 1fr;
+            height: auto;
+            align: left middle;
+            margin: 0 1;
+        }
+
+        #commit-message {
+            width: 1fr;
+            margin: 0;
+        }
+
+        #commit-button {
+            width: 1fr;
+            min-width: 8;
+            height: 3;
+            padding: 0;
+            margin: 0;
+        }
+
+        #revert-button {
+            width: 7;
+            min-width: 4;
+            height: 3;
+            padding: 0;
+            margin: 0 0 0 1;
+            text-align: center;
+        }
+
+        .changes-section {
+            height: auto;
+            width: 1fr;
+            margin: 0;
+            border-bottom: tall black 12%;
+            padding: 0;
+            background: transparent;
+
+            & > .changes-header {
+                width: 1fr;
+                height: auto;
+                padding: 0 1;
+                background: $surface 30%;
+            }
+
+            & > .changes-header > CollapsibleTitle {
+                width: 1fr;
+                padding: 0;
+                background: transparent;
+                color: $text-primary;
+                text-style: bold;
+            }
+
+            & > .changes-header > CollapsibleTitle:focus {
+                background: $surface 40%;
+                color: $text-primary;
+            }
+
+            & > Contents {
+                width: 1fr;
+                padding: 0;
+            }
+        }
+        
+        .section-action {
+            width: 3;
+            min-width: 3;
+            margin-left: 1;
+            border: none;
+            background: $surface;
+            color: $text-secondary;
+        }
+
+        .section-action:hover,
+        .section-action:focus {
+            background: $primary 25%;
+            color: $text-primary;
+        }
+
+        .section-empty {
+            display: none;
+            height: auto;
+            background: $background;
+            color: $text-secondary;
+            text-style: dim;
+            padding: 1 2;
+            margin: 0;
+        }
+
+        OptionList {
+            padding: 0;
+            border: none;
+            height: auto;
+            max-height: 14;
+            background: $background;
+
+            & > .option-list--option {
+                padding: 0 1;
+                border-left: heavy transparent;
+                text-wrap: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            & > .option-list--option-highlighted {
+                border-left: heavy $secondary;
+                background: $secondary 18%;
+                color: $text-primary;
+                text-style: bold;
+            }
+        }
+    }
+}

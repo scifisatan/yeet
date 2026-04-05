@@ -1,0 +1,82 @@
+* {
+    scrollbar-size: 1 1;
+}
+
+.-hidden {
+    display: none;
+}
+
+App.-hide-footer {
+    Footer {
+        display: none;
+    }
+}
+
+Footer {
+    background: transparent;
+
+    .footer-key--key {
+        color: $text;
+        background: transparent;
+        padding: 0 1;
+    }
+
+    .footer-key--description {
+        padding: 0 1 0 0;
+        color: $text-muted;
+        background: $footer-description-background;
+    }
+
+    &:hover {
+        color: transparent;
+        background: transparent;
+    }
+
+    &.-disabled {
+        text-style: dim;
+    }
+
+    &.-compact {
+        .footer-key--key {
+            padding: 0;
+        }
+
+        .footer-key--description {
+            padding: 0 0 0 1;
+        }
+    }
+
+    FooterLabel {
+        color: $text-muted;
+        background: $footer-description-background;
+    }
+
+    FooterKey.-disabled {
+        .footer-key--key {
+            text-opacity: 0.6;
+        }
+    }
+}
+
+Toast {
+    margin: 0;
+    padding: 0 1;
+    background: $background;
+    color: $text-muted;
+
+    .toast--title {
+        color: $text;
+    }
+
+    &.-information {
+        border: round $primary;
+    }
+
+    &.-warning {
+        border: round $warning;
+    }
+
+    &.-error {
+        border: round $error;
+    }
+}

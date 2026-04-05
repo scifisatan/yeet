@@ -1,0 +1,44 @@
+ConfirmModal {
+    align: center middle;
+    background: $background 35%;
+}
+
+#confirm-dialog {
+    width: 72;
+    max-width: 94%;
+    height: auto;
+    border: panel $primary 40%;
+    background: $surface 96%;
+    padding: 1 2 1 2;
+}
+
+#confirm-title {
+    color: $text-primary;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+#confirm-body {
+    color: $text-secondary;
+    margin-bottom: 1;
+    text-wrap: wrap;
+}
+
+#confirm-buttons {
+    width: 1fr;
+    height: auto;
+}
+
+#confirm-buttons-spacer {
+    width: 1fr;
+}
+
+#confirm-cancel {
+    margin-right: 1;
+}
+
+#confirm-cancel,
+#confirm-continue {
+    min-width: 14;
+    height: 3;
+}
