@@ -1,6 +1,6 @@
 <div align="center">
 
-<h3 align="center">Yeet</h3>
+<h1 align="center">Yeet</h1>
 
 <p align="center">VSCode like git client in your terminal.</p>
 
