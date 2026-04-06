@@ -1,0 +1,5 @@
+- [ ] handle image
+- [ ] handle large diff (don't try to render)
+- [ ] handle no git repo
+- [ ] handle sync (incoming changes)
+- [ ] handle merge conflict
